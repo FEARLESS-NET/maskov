@@ -100,7 +100,7 @@ const Header = () => {
             <select value={i18n.language}
               onChange={changeLanguage}
               className="border border-white bg-transparent text-white rounded p-1">
-              <option value="uz" className='bg-blue-900 text-white '>Uz</option>
+              <option value="uz" className='bg-blue-900 text-white'>Uz</option>
               <option value="ru" className='bg-blue-900 text-white'>Ru</option>
               <option value="en" className='bg-blue-900 text-white'>En</option>
             </select>
