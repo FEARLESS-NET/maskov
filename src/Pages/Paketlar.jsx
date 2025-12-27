@@ -118,47 +118,67 @@ const Paketlar = () => {
           {t("Abonentlik")}
         </p>
       </div>
+{/* 🔐 LOGIN MODAL */}
+{showLogin && (
+  <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-40">
+    
+    {/* Gradient Border */}
+    <div className="p-[2px] rounded-3xl bg-gradient-to-r from-red-500 via-purple-500 to-pink-500 animate-pulse">
+      
+      <div className="bg-black/80 backdrop-blur-xl p-8 rounded-3xl w-[360px] shadow-2xl relative">
 
-      {/* 🔐 LOGIN MODAL */}
-      {showLogin && (
-        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-40">
-          <div className="bg-gradient-to-br from-gray-900 to-black p-8 rounded-2xl w-[350px] animate-scale-in">
-            <h2 className="text-2xl font-bold mb-6 text-center text-red-400">
-              Login
-            </h2>
+        {/* Close icon */}
+        <button
+          onClick={() => setShowLogin(false)}
+          className="absolute top-4 right-4 text-gray-400 hover:text-white text-xl"
+        >
+          ✕
+        </button>
 
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full mb-4 px-4 py-3 rounded-xl bg-gray-800 outline-none focus:ring-2 focus:ring-red-500"
-            />
+        <h2 className="text-3xl font-extrabold mb-6 text-center bg-gradient-to-r from-red-400 to-pink-500 text-transparent bg-clip-text">
+          Premium Login
+        </h2>
 
-            <input
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full mb-6 px-4 py-3 rounded-xl bg-gray-800 outline-none focus:ring-2 focus:ring-red-500"
-            />
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          className="w-full mb-4 px-4 py-3 rounded-xl bg-gray-900/70 outline-none
+          focus:ring-2 focus:ring-pink-500 transition"
+        />
 
-            <button
-              onClick={handleLogin}
-              className="w-full py-3 bg-red-500 hover:bg-red-600 rounded-xl font-bold"
-            >
-              Login
-            </button>
-
-            <button
-              onClick={() => setShowLogin(false)}
-              className="w-full mt-3 text-gray-400 hover:text-white"
-            >
-              Bekor qilish
-            </button>
-          </div>
+        {/* Password with effect */}
+        <div className="relative mb-6">
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="w-full px-4 py-3 rounded-xl bg-gray-900/70 outline-none
+            focus:ring-2 focus:ring-pink-500 transition"
+          />
+          <span className="absolute right-4 top-3 text-gray-400">🔒</span>
         </div>
-      )}
+
+        {/* Premium Button */}
+        <button
+          onClick={handleLogin}
+          className="w-full py-3 rounded-xl font-bold text-black
+          bg-gradient-to-r from-yellow-400 to-orange-500
+          hover:scale-105 transition-all shadow-lg hover:shadow-yellow-500/50"
+        >
+          🚀 Login Now
+        </button>
+
+        <p className="text-center text-gray-400 mt-4 text-sm">
+          Premium rejaga kirish
+        </p>
+      </div>
+    </div>
+  </div>
+)}
+
     </div>
   );
 };
