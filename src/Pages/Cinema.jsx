@@ -67,7 +67,7 @@ const Cinema = () => {
           const isSaved = saved.some(x => x.title === item.title);
           return (
             <li key={i} onClick={() => setSelectedMovie(item)}
-              className="w-[270px] h-[480px] relative cursor-pointer bg-white/10 backdrop-blur-xl rounded-2xl shadow-xl shadow-red-900/40 transition-all duration-300 hover:scale-110 hover:-translate-y-4 hover:shadow-red-500/60">
+              className="w-[290px] h-[490px] relative cursor-pointer bg-white/10 backdrop-blur-xl rounded-2xl shadow-xl shadow-red-900/40 transition-all duration-300 hover:scale-110 hover:-translate-y-4 hover:shadow-red-500/60">
 
               {/* SAVE BUTTON */}
               <button onClick={(e) => toggleSave(e, item)}
